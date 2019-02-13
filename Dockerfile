@@ -5,6 +5,8 @@ RUN git config --global http.postBuffer 1048576000
 RUN git config --global https.postBuffer 1048576000
 RUN git config --global http.maxRequestBuffer 100M
 RUN git config --global https.maxRequestBuffer 100M
+# delta defaults to 256, increase.
+RUN git config --global pack.deltaCacheSize 2047m
 
 ARG GIT_TRACE_PACKET=1
 ENV GIT_TRACE_PACKET="${GIT_TRACE_PACKET}"
